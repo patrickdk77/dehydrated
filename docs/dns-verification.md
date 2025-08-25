@@ -11,7 +11,7 @@ For `deploy_challenge`
 
 $2 is the domain name for which the certificate is required, 
 
-$3 is a "challenge token" (which is not needed for dns-01), and 
+$3 is the raw token (which is needed for some dns-01 authorizors), and 
 
 $4 is a token which needs to be inserted in a TXT record for the domain.
 

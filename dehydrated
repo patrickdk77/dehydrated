@@ -1251,6 +1251,8 @@ sign_csr() {
     keyauths[${idx}]="${keyauth}"
     if [ "${identifier_type:-}" = "ip" ] && [ "${CHALLENGETYPE}" = "tls-alpn-01" ]; then
       deploy_args[${idx}]="$(echo "${identifier}" | ip_to_ptr) ${challenge_tokens[${idx}]} ${keyauth_hook}"
+    elif [ "${CHALLENGETYPE}" = "dns-01" ]; then
+      deploy_args[${idx}]="${identifier} ${keyauth} ${keyauth_hook}"
     else
       deploy_args[${idx}]="${identifier} ${challenge_tokens[${idx}]} ${keyauth_hook}"
     fi
