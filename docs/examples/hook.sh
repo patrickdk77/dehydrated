@@ -14,6 +14,8 @@ deploy_challenge() {
   #   The name of the file containing the token to be served for HTTP
   #   validation. Should be served by your web server as
   #   /.well-known/acme-challenge/${TOKEN_FILENAME}.
+  #   For dns-01 validations it is the raw TOKEN_VALUE challenge as needed
+  #   for the raw acmeproxy protocol
   # - TOKEN_VALUE
   #   The token value that needs to be served for validation. For DNS
   #   validation, this is what you want to put in the _acme-challenge
